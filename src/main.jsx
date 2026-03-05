@@ -1,10 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+
 import App from './App.jsx'
+import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    {/* react router 기능을 전체 앱에 적용. BrowserRouter => 페이지 이동 기능을 제공 */}
+    <BrowserRouter>
+        {/* 앱 전체 */}
+        <App />
+    </BrowserRouter>
   </StrictMode>,
 )
