@@ -3,14 +3,17 @@
     flex-direction: column;
     width: 100vw;
     min-height: 100vh;    
+
+    .container {
+        flex: 1;
+        display: flex;
+
+        .content {
+            flex: 1;
+            padding:30px;
+        }
+    }
 }
 
-.main {
-    flex: 1;
-    display: flex;
-}
 
-.content {
-    flex: 1;
-    padding:30px;
-}
+
