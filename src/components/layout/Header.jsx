@@ -2,11 +2,12 @@ import { Link, NavLink } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 const Header = ({}) => {
+    // 메뉴 데이터
     const menus = [
         {
             name: 'Home',// 메뉴명
             path: '/',// 라우터 경로
-            end: true,// 경로가 정확히 '/'일때만 active
+            end: true,// React Router 전용 옵션. url과 to값이 정확히 일치할때만 active
         },
         {name: 'Dropdown', path: '/dropdown'},
         {name: 'Modal', path: '/modal'},
@@ -18,25 +19,22 @@ const Header = ({}) => {
 
             <nav>
                 <ul className={styles.sidebar}>
+                    {menus.map((menu) => (
+                        <li key={menu.path} className={styles["sidebar-item"]}>
+                            <NavLink to={menu.path} end={menu.end} className={({ isActive }) => `${styles["sidebar-link"]} ${isActive ? styles.active : ''}`}>{menu.name}</NavLink>
+                        </li> 
+                    ))}
+
+                    {/* 메뉴 링크 - 배열x */}
                     <li className={styles["sidebar-item"]}>
                         {/* NavLink는 현재 경로가 일치하면 isActive prop이 제공되어 active 클래스를 줄 수 있음 - NavLink는 함수에 객체를 전달함 */}
                         {/* 경로를 '/'만 사용하면 모든 메뉴의 '/'와 겹치기 때문에 정확히 일치해야함이 요구되는 경우 'end' 옵션을 추가 */}
                         <NavLink to="/" className={({ isActive }) => `${styles["sidebar-link"]} ${isActive ? styles.active : ''}`}>Home</NavLink>
-                    </li>
+                    </li>                 
+                
+                    {/* 그냥 링크 */}
                     <li className={styles["sidebar-item"]}>
-                        <NavLink to="/" className={styles["sidebar-link"]}>Home</NavLink>
-                    </li>
-                    <li className={styles["sidebar-item"]}>
-                        <NavLink to="/dropdown" className={styles["sidebar-link"]}>Dropdown</NavLink>
-                    </li>
-                    <li className={styles["sidebar-item"]}>
-                        <NavLink to="/modal" className={styles["sidebar-link"]}>Modal</NavLink>
-                    </li>
-                    <li className={styles["sidebar-item"]}>
-                        <NavLink to="/accordion" className={styles["sidebar-link"]}>Accordion</NavLink>
-                    </li>
-                    <li className={styles["sidebar-item"]}>
-                        <Link to="/etc" className={styles["sidebar-link"]}>일반 링크</Link>
+                        <Link to="/etc" className={styles["sidebar-link"]}>링크</Link>
                     </li>
                 </ul>
             </nav>
