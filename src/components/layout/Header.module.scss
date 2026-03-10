@@ -1,20 +1,27 @@
 .header {
-    padding: 0 20px;
+    padding: 15px 20px 0;
     width: 150px;
     background: #eee;
 
     .h1 {
-        font-size: 18px;
+        font-size: 26px;
+        font-weight:normal;
         color: #aaa;
     }
 
     .sidebar {        
+        padding-top: 20px;
+
         .sidebar-link {
-            font-size: 13px;
+            font-size: 12px;
+            color:#999;
 
             &.active {
-                color: blue;
-                font-weight: bold;
+                color: #333;
+            }
+
+            &:hover {
+                color: #555;
             }
         }
     }
