@@ -8,7 +8,7 @@ export default function RadioGroup ({
 }){
     return (
         <div role="radiogroup">
-            {options.map((option) => (// 리턴 구문 영역이라 형제요소를 나란히 리턴하면 안됨. so, label안에 input넣기
+            {options.map((option) => (// 리턴 구문 영역이라 형제요소를 병렬로 나열하면 안됨. so, label로 감싸기
                 <label key={option.value}>
                     <input key={option.value} type="radio" name={name} value={option.value} 
                     checked={value === option.value}// 1. 현재 선택값과 비교해서 체크 여부 결정

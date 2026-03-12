@@ -3,28 +3,31 @@ import Radio from "../../components/Radio/Radio"
 import RadioGroup from "../../components/RadioGroup/RadioGroup"
 
 const RadioPage = () => {
-    // CustomCheckboxGroup
-        // 체크박스의 state를 배열로 관리하기 ==> 체크한 건 배열에 추가하고 해제한 건 배열에서 삭제
-        const [checkedArray, setCheckedArray] = useState(['html']);// 초기값
+    const contryOptions = [
+        {id:1, value:"kr", label: "한국"},
+        {id:2, value:"us", label: "미국"},
+        {id:3, value:"jp", label: "일본"},
+        {id:4, value:"uk", label: "영국"},
+    ];    
     
-        const [radioGroup, setRadioGroup] = useState('us');
+    const [radioGroup, setRadioGroup] = useState('us');
+
+    // 콘솔 찍어보자 => radioGroup 값이 바뀔 때만(추천)
+    // 의존성 배열이 바뀔 때만 실행
+    // 배열이 비어있으면 컴포넌트가 처음 마운트 될 때만 실행(API 처음 호출할 때 많이 씀)
+    // 배열이 아예 없다면. 렌더마다 실행(무한루프 위험)
+    useEffect(() => {
+        console.log('radioGroup : ', radioGroup);
+
+        // 콘솔 찍기
+        // API 호출
+        // DOM 직접 접근
+        // 이벤트 등록
+        // localStorage 사용
+    }, [radioGroup]);
     
-        // 콘솔 찍어보자 => radioGroup 값이 바뀔 때만(추천)
-        // 의존성 배열이 바뀔 때만 실행
-        // 배열이 비어있으면 컴포넌트가 처음 마운트 될 때만 실행(API 처음 호출할 때 많이 씀)
-        // 배열이 아예 없다면. 렌더마다 실행(무한루프 위험)
-        useEffect(() => {
-            console.log('radioGroup : ', radioGroup);
-    
-            // 콘솔 찍기
-            // API 호출
-            // DOM 직접 접근
-            // 이벤트 등록
-            // localStorage 사용
-        }, [radioGroup]);
-        
-        // 콘솔 찍어보자 => 렌더링마다(비추)
-        // console.log('radioGroup : ', radioGroup);
+    // 콘솔 찍어보자 => 렌더링마다(비추)
+    // console.log('radioGroup : ', radioGroup);
 
     return (
         <div className="page">

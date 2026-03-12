@@ -11,7 +11,7 @@ const Header = ({}) => {
         },
         {name: 'v Button', path: '/button'},
         {name: 'v Input', path: '/input'},        
-        {name: 'Radio', path: '/radio'},
+        {name: 'v Radio', path: '/radio'},
         {name: 'v Checkbox', path: '/checkbox'},
         {name: 'v Textarea', path: '/textarea'},
         {name: 'Select', path: '/select'},
