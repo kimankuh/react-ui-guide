@@ -1,5 +1,4 @@
-import React from "react";
-import "./Textarea.scss"
+import styles from "./Textarea.module.scss"
 
 const Textarea = ({
     label,
@@ -12,10 +11,10 @@ const Textarea = ({
     error,
     rows = 4,
 }) => {
-    const classes = ["textarea", error && "error", className].filter(Boolean).join(" ");// 클래스 미사용시 공백 없애줌
+    const classes = [styles.textarea, error && styles.error, className].filter(Boolean).join(" ");// 클래스 미사용시 공백 없애줌
     return (
-        <div className="ui-textarea">
-            {label && <label className="ui-textarea__label" htmlFor={id}>{label}</label>}
+        <div className={styles.uiTextarea}>
+            {label && <label className={styles.uiTextarea__labe} htmlFor={id}>{label}</label>}
             
             <textarea 
                 id={id}
@@ -27,7 +26,7 @@ const Textarea = ({
                 rows={rows}
             />
 
-            {error && <p className="ui-error">{error}</p>}
+            {error && <p className={styles.uiError}>{error}</p>}
         </div>
     );
 }

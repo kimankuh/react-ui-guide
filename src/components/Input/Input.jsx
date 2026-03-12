@@ -1,5 +1,4 @@
-import React from "react";
-import "./Input.scss";
+import styles from "./Input.module.scss";
 
 const Input = ({
     label,
@@ -12,16 +11,16 @@ const Input = ({
     disabled,
     error = "",
 }) => {
-    const classes = ["input", error && "error", className].filter(Boolean).join(" ");
+    const classes = [styles.input, error && styles.error, className].filter(Boolean).join(" ");
     return (
-        <div className="ui-input">
-            {label && <label className="ui-label" htmlFor={id}>{label}</label>}
+        <div className={styles.uiInput}>
+            {label && <label className={styles.uiLabel} htmlFor={id}>{label}</label>}
 
             <input type={type} id={id} className={classes} value={value} placeholder={placeholder} onChange={onChange} disabled={disabled}  />
 
             {/* <input type={type} id={id} className={`input ${error ? "error" : ""} ${className || ""}`} value={value} placeholder={placeholder} onChange={onChange} disabled={disabled}  /> */}
 
-            {error && <p className="ui-error">{error}</p>}
+            {error && <p className={styles.uiError}>{error}</p>}
         </div>
     );
 };

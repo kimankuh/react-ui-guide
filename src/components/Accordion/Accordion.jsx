@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Accodion.scss';
+import styles from './Accordion.module.scss';
 
 export default function Accordion ({ items }){
     // 열려있는 index만 저장
@@ -19,16 +19,16 @@ export default function Accordion ({ items }){
 
     }
     return (
-        <div className="accordion">
+        <div className={styles.accordion}>
             {items.map((item, index) => {
                 const isOpen = openIndexes.includes(index);// state 배열에 index와 같은 값이 있다면 true
 
                 return (
-                    <div key={item.id} className="accordion-item">
-                        <button type="button" id={`accordion-${item.id}`} className="accordion-header" aria-expanded={isOpen} onClick={() => toggle(index)}>{item.title}</button>
+                    <div key={item.id} className={styles.accordionItem}>
+                        <button type="button" id={`accordion-${item.id}`} className={styles.accordionHeader} aria-expanded={isOpen} onClick={() => toggle(index)}>{item.title}</button>
                         {/* onClick={toggle(index)} : 클릭할 때 실행되는 것이 아니라 렌더링될 때 바로 실행됨. 그래서 undefined가 반환되므로 이땐 화살표 함수 형태로 전달한다. */}
 
-                        <div id={`panel-${item.id}`} className="accordion-content" aria-labelledby={`accordion-${item.id}`} hidden={!isOpen}>{item.content}</div>
+                        <div id={`panel-${item.id}`} className={styles.accordionContent} aria-labelledby={`accordion-${item.id}`} hidden={!isOpen}>{item.content}</div>
                     </div>
                 )
             })}

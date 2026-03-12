@@ -19,8 +19,8 @@ const Select = ({
 }) => {
     const classes = ["select", error && "error", className].filter(Boolean).join(" ");
     return (
-        <div className="ui-select">
-            {label && <label className="ui-label">{label}</label>}
+        <div className="uiSelect">
+            {label && <label className="uiLabel">{label}</label>}
 
             <select id={id} title={title} className={classes} disabled={disabled} onChange={onChange}>
                 <option>{placeholder}</option>
@@ -41,7 +41,7 @@ const Select = ({
                 ))} */}
             </select>
 
-            {error && <p className="ui-error">{error}</p>}
+            {error && <p className="uiError">{error}</p>}
         </div>
     );
 }

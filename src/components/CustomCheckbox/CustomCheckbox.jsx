@@ -1,4 +1,4 @@
-import "./CustomCheckbox.scss";
+import styles from "./CustomCheckbox.module.scss";
 
 export default function CustomCheckbox ({
     id,
@@ -11,16 +11,15 @@ export default function CustomCheckbox ({
     const handleChange = (e) => {
         onChange(e.target.checked);
     }
-
     return (
-        <div className={`custom-checkbox ${disabled ? "disabled" : ""}`}>
+        <div className={`${styles.customCheckbox} ${disabled ? "disabled" : ""}`}>
             {/* 실제 상태를 가진 input - 바뀌지 않는 건 type, 그 외엔 props로 받기 */}
             <input type="checkbox" id={id} checked={checked} onChange={handleChange} disabled={disabled} />
 
             {/* 클릭용 label + 커스텀 UI */}
             <label htmlFor={id}>
-                <span className="box"></span>
-                <span className="label-text">{label}</span>
+                <span className={styles.box}></span>
+                <span className={styles.labelText}>{label}</span>
             </label>
         </div>
     );

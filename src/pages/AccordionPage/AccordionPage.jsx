@@ -1,12 +1,12 @@
-import SingleAccordion from '../../../../my-app/src/components/SinlgeAccordion/SingleAccordion';
-import Accodion from '../../components/Accordion/Accodion'
-import styles from './AccordionPage.module.scss'
+import SingleAccordion from '../../components/SingleAccordion/SingleAccordion';
+import Accodion from '../../components/Accordion/Accordion'
+// import styles from './AccordionPage.module.scss'
 
 const AccordionPage = () => {
     // Accordion
     const accordionData = [
         {
-            id: 'item-01',
+            id: 'item01',
             title: 'HTML 질문',
             content: (
                 <div>
@@ -16,7 +16,7 @@ const AccordionPage = () => {
             )
         },
         {
-            id: 'item-02',
+            id: 'item02',
             title: 'CSS 질문',
             content: (
                 <div>
@@ -26,7 +26,7 @@ const AccordionPage = () => {
             )
         },
         {
-            id: 'item-03',
+            id: 'item03',
             title: 'JS 질문',
             content: (
                 <div>
@@ -38,22 +38,22 @@ const AccordionPage = () => {
     ];
 
     return (
-        <div className={styles.page}>
-            <h2 className={styles['page-title']}>Accordion</h2>
-            <p className={styles['p-text']}>아코디언에 대한 페이지 입니다.</p>
+        <div className="page">
+            <h2 className="pageTitle">Accordion</h2>
+            <p className="pText">아코디언에 대한 페이지 입니다.</p>
 
-            <div className={styles.preview}>
-                <h3 className={styles['preview-title']}>1번 아코디언</h3>
-                <p className={styles['p-text']}>1번 아코디언 설명설명</p>
-                <div className={styles.demo}>
+            <div className="preview">
+                <h3 className="previewTitle">1번 아코디언</h3>
+                <p className="pText">1번 아코디언 설명설명</p>
+                <div className="demo">
                     <Accodion items={accordionData} />
                 </div>
             </div>
 
-            <div className={styles.preview}>
-                <h3 className={styles['preview-title']}>2번 아코디언</h3>
-                <p className={styles['p-text']}>2번 아코디언 설명설명</p>
-                <div className={styles.demo}>
+            <div className="preview">
+                <h3 className="previewTitle">2번 아코디언</h3>
+                <p className="pText">2번 아코디언 설명설명</p>
+                <div className="demo">
                     <SingleAccordion items={accordionData} />
                 </div>
             </div>

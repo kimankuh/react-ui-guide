@@ -1,5 +1,4 @@
-import { useState } from "react";
-import './RadioGroup.scss';
+import styles from './RadioGroup.module.scss';
 
 export default function RadioGroup ({
     name,

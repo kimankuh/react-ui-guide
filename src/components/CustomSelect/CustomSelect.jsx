@@ -131,7 +131,7 @@ const CustomSelect = ({
             </select>
 
             {/* 8-4) 에러 메세지 */}
-            {error && <p className="ui-error">{error}</p>}
+            {error && <p className="uiError">{error}</p>}
         </div>
     );
 }

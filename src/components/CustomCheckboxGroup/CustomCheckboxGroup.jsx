@@ -1,4 +1,4 @@
-import "./CustomCheckboxGroup.scss";
+import styles from "./CustomCheckboxGroup.module.scss";
 
 export default function CustomCheckboxGroup({
     options,// ==> 화면에 뿌려주는 용도
@@ -27,13 +27,13 @@ export default function CustomCheckboxGroup({
         console.log('optionValue', value)
     }
     return (
-        <div className="checkbox-group">            
+        <div className={styles.checkboxGroup}>            
             {options.map(option => {
                 // props으로 받은 value에 들어있는 값을 비교하여 true/false
                 const checked = value.includes(option.value);
                 // 위 checked 변수의 true/false에 따라 checked 클래스 추가할지 판단
                 // 각 체크박스마다 판단하고 클래스를 넣어줘야하니 반복문 내부에 위치함
-                const classes = ['ui-checkbox', checked && 'checked'].filter(Boolean).join(' ');
+                const classes = [styles.uiCheckbox, checked && styles.checked].filter(Boolean).join(' ');
                 return (
                     <button key={option.value} type="button" className={classes} onClick={() => handleClick(option.value)}>{option.label}</button>
                 );

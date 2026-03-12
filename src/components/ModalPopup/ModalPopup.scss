@@ -1,6 +1,6 @@
 @import '../../styles/shared';
 
-.modal-overlay {
+.modalOverlay {
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -13,7 +13,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modalContent {
     position: relative;
     padding: 24px;
     width: 400px;
@@ -24,7 +24,7 @@
     animation: modalFadeIn 0.2s ease-out;
 }
 
-.modal-close {
+.modalClose {
     position: absolute;
     top: 12px;
     right: 12px;

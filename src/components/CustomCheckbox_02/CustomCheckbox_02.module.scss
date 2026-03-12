@@ -1,0 +1,13 @@
+.toggleButton {
+    &.checked {
+        color: #fff;
+        background-color: $color-warning;
+    }
+
+    .box {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #999;
+        background: #fff;
+    }
+}

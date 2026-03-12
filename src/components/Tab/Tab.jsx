@@ -15,7 +15,7 @@ export default function Tab ({ tabs }){
                     // console.log('isActive', isActive, activeTab);
 
                     return (
-                    <button key={tab.id} type="button" role="tab" id={tab.id} onClick={() => setActvieTab(index)} className={`tab-button ${activeTab === index ? "active" : ""}`} title={isActive ? "선택됨" : undefined}>{tab.label}</button>
+                    <button key={tab.id} type="button" role="tab" id={tab.id} onClick={() => setActvieTab(index)} className={`tabButton ${activeTab === index ? "active" : ""}`} title={isActive ? "선택됨" : undefined}>{tab.label}</button>
                     )
                 })}
             </div>

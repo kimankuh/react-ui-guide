@@ -23,9 +23,9 @@ export default function ModalPopupParent ({
     }, [onClose]);
     
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" role="dialog" onClick={(e) => e.stopPropagation()}>
-                <button type="button" className="modal-close" onClick={onClose}>X</button>
+        <div className="modalOverlay" onClick={onClose}>
+            <div className="modalContent" role="dialog" onClick={(e) => e.stopPropagation()}>
+                <button type="button" className="modalClose" onClick={onClose}>X</button>
                 {children}
             </div>
         </div>

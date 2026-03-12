@@ -37,9 +37,9 @@ export default function ModalPopup ({
     if(!isOpen) return null; 
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" role="dialog" aria-modal="true" onClick={(e) => {e.stopPropagation()}}>
-                <button type="button" className="modal-close" aria-label="닫기" onClick={onClose}>X</button>
+        <div className="modalOverlay" onClick={onClose}>
+            <div className="modalContent" role="dialog" aria-modal="true" onClick={(e) => {e.stopPropagation()}}>
+                <button type="button" className="modalClose" aria-label="닫기" onClick={onClose}>X</button>
                 {children}                
             </div>
         </div>

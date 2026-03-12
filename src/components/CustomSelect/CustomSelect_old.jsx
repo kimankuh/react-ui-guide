@@ -20,7 +20,7 @@ const CustomSelect = ({
 }) => {
     const selectedValue = options.find((opt) => opt.value === value);// 선택된 value
     const [open, setOpen] = useState(false);// select 열림/닫힘
-    const classes = ['ui-select-wrap', error && 'error', disabled && 'disabled'].filter(Boolean).join(" ");
+    const classes = ['uiSelect-wrap', error && 'error', disabled && 'disabled'].filter(Boolean).join(" ");
     // 부모에 error 프롭이 있다면 , disabled 프롭이 있다면 클래스 추가됨
     // .filter(Boolean) => false, null, undefined, "", 0 => 이런 빈 값들이 있다면 제거해라
     // join(" ") => 클래스 사이사이 공백 추가
@@ -30,7 +30,7 @@ const CustomSelect = ({
     console.log('open', open);
     return (
         <div className={classes}>
-            {label && <label className="ui-label">{label}</label>}
+            {label && <label className="uiLabel">{label}</label>}
 
             {/* custom select */}
             <div className="ui-custom-select" onClick={() => !disabled && setOpen(!open)}>
@@ -61,7 +61,7 @@ const CustomSelect = ({
                 })}
             </select>
 
-            {error && <p className="ui-error">{error}</p>}
+            {error && <p className="uiError">{error}</p>}
         </div>
     );
 }
