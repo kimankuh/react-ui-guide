@@ -1,10 +1,8 @@
-@import "../../styles/shared";
-
-.ui-custom-select {
+.uiCustomSelect {
     position: relative;
     cursor: pointer;
 
-    .select-options {
+    .selectOptions {
         position: absolute;
         top: 20px;
         left: 50%;

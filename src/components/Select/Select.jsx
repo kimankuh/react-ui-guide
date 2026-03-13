@@ -1,5 +1,4 @@
-import React from "react";
-import "./Select.scss";
+import styles from "./Select.module.scss";
 
 const Select = ({
     label,
@@ -17,10 +16,10 @@ const Select = ({
     disabled = false,
     onChange,
 }) => {
-    const classes = ["select", error && "error", className].filter(Boolean).join(" ");
+    const classes = [styles.select, error && styles.error, className].filter(Boolean).join(" ");
     return (
-        <div className="uiSelect">
-            {label && <label className="uiLabel">{label}</label>}
+        <div className={styles.uiSelect}>
+            {label && <label className={styles.uiLabel}>{label}</label>}
 
             <select id={id} title={title} className={classes} disabled={disabled} onChange={onChange}>
                 <option>{placeholder}</option>

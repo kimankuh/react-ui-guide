@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Tab.scss';
+import styles from './Tab.module.scss';
 
 export default function Tab ({ tabs }){
     // 자식이 state를 관리하는 경우 => 열림/닫힘, 탭 내부 상태(active)
@@ -7,22 +7,22 @@ export default function Tab ({ tabs }){
 
     // console.log('tabs', tabs)
     return (
-        <div className="tabs">
+        <div className={styles.tabs}>
             {/* 탭 버튼 영역 */}
-            <div className="tab-header">
+            <div className={styles.tabHeader}>
                 {tabs.map((tab, index) => {// map 매개변수 : 현재 요소값, 인덱스, 원본 배열
                     const isActive = activeTab === index;// true/false
                     // console.log('isActive', isActive, activeTab);
 
                     return (
-                    <button key={tab.id} type="button" role="tab" id={tab.id} onClick={() => setActvieTab(index)} className={`tabButton ${activeTab === index ? "active" : ""}`} title={isActive ? "선택됨" : undefined}>{tab.label}</button>
+                    <button key={tab.id} type="button" role="tab" id={tab.id} onClick={() => setActvieTab(index)} className={`${styles.tabButton} ${activeTab === index ? styles.active : ""}`} title={isActive ? "선택됨" : undefined}>{tab.label}</button>
                     )
                 })}
             </div>
 
             {/* 탭 컨텐츠 영역 */}
             {/* 액티브 컨텐츠만 보이기 */}
-            {/* <div className="tab-panel" aria-hidden={!isActive}>
+            {/* <div className={styles.tabPanel} aria-hidden={!isActive}>
                 {tabs[activeTab].content}
             </div> */}
 
@@ -31,7 +31,7 @@ export default function Tab ({ tabs }){
                 const isActive = activeTab === index;
                 // console.log('activeTab : ', activeTab)
                 return(
-                <div key={tab.id} role="tabpanel" className="tab-panel" aria-labeledby={tab.id} aria-hidden={!isActive} hidden={!isActive}>{tab.content}</div>
+                <div key={tab.id} role="tabpanel" className={styles.tabPanel} aria-labeledby={tab.id} aria-hidden={!isActive} hidden={!isActive}>{tab.content}</div>
                 )
             })}
         </div>

@@ -3,13 +3,15 @@ import { Routes, Route } from "react-router-dom"
 import Layout from "../components/layout/Layout"
 import Home from "../pages/Home/Home"
 import ButtonPage from "../pages/Button/ButtonPage"
+import InputPage from "../pages/InputPage/InputPage"
 import RadioPage from "../pages/RadioPage/RadioPage"
 import CheckboxPage from "../pages/CheckboxPage/CheckboxPage"
-import InputPage from "../pages/InputPage/InputPage"
 import TextareaPage from "../pages/TextareaPage/TextareaPage"
-import DropdownPage from "../pages/DropdownPage/DropdownPage"
-import ModalPage from "../pages/ModalPage/ModalPage"
+import SelectPage from "../pages/SelectPage/SelectPage"
 import AccordionPage from "../pages/AccordionPage/AccordionPage"
+import TabPage from "../pages/TabPage/TabPage"
+import PopupPage from "../pages/PopupPage/PopupPage"
+
 
 const Routers = () => {
     return (
@@ -30,8 +32,10 @@ const Routers = () => {
                 <Route path="/radio" element={<RadioPage />} />              
                 <Route path="/checkbox" element={<CheckboxPage />} />              
                 <Route path="/textarea" element={<TextareaPage />} />
-                <Route path="/modal" element={<ModalPage />} />
+                <Route path="/select" element={<SelectPage />} />
                 <Route path="/accordion" element={<AccordionPage />} />
+                <Route path="/tab" element={<TabPage />} />
+                <Route path="/popup" element={<PopupPage />} />                
             </Route>
         </Routes>
 

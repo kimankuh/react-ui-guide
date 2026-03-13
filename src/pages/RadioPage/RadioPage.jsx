@@ -31,12 +31,12 @@ const RadioPage = () => {
 
     return (
         <div className="page">
-            <h2 className="pageTitle">Input</h2>
-            <p className="pText">Input에 대한 페이지 입니다.</p>
+            <h2 className="pageTitle">Radio</h2>
+            <p className="pText">Radio에 대한 페이지 입니다.</p>
 
             <div className="preview">
                 <h3 className="previewTitle">Basic</h3>
-                <p className="pText">체크하여 주세요.</p>
+                <p className="pText">선택하여 주세요.</p>
                 <div className="demo">
                     <Radio id="radio_01" name="originRadio" label="HTML" />
                     <Radio id="radio_02" name="originRadio" label="CSS" />

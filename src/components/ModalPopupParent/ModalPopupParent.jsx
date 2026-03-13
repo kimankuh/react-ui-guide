@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import './ModalPopupParent.scss';
+import { useEffect } from "react"
+import styles from './ModalPopupParent.module.scss'
 
 // state(상태)를 부모에서 관리
 export default function ModalPopupParent ({
@@ -23,9 +23,9 @@ export default function ModalPopupParent ({
     }, [onClose]);
     
     return (
-        <div className="modalOverlay" onClick={onClose}>
-            <div className="modalContent" role="dialog" onClick={(e) => e.stopPropagation()}>
-                <button type="button" className="modalClose" onClick={onClose}>X</button>
+        <div className={styles.modalOverlay} onClick={onClose}>
+            <div className={styles.modalContent} role="dialog" onClick={(e) => e.stopPropagation()}>
+                <button type="button" className={styles.modalClose} onClick={onClose}>X</button>
                 {children}
             </div>
         </div>

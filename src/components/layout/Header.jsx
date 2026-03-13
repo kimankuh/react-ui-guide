@@ -9,16 +9,15 @@ const Header = ({}) => {
             path: '/',// 라우터 경로
             end: true,// React Router 전용 옵션. url과 to값이 정확히 일치할때만 NavLink를 active 하겠다
         },
-        {name: 'v Button', path: '/button'},
-        {name: 'v Input', path: '/input'},        
-        {name: 'v Radio', path: '/radio'},
-        {name: 'v Checkbox', path: '/checkbox'},
-        {name: 'v Textarea', path: '/textarea'},
+        {name: 'Button', path: '/button'},
+        {name: 'Input', path: '/input'},        
+        {name: 'Radio', path: '/radio'},
+        {name: 'Checkbox', path: '/checkbox'},
+        {name: 'Textarea', path: '/textarea'},
         {name: 'Select', path: '/select'},
-        {name: 'v Accordion', path: '/accordion'},
+        {name: 'Accordion', path: '/accordion'},
         {name: 'Tab', path: '/tab'},
-        {name: 'Dropdown', path: '/dropdown'},
-        {name: 'Modal Popup', path: '/modalPopup'},
+        {name: 'Popup', path: '/popup'},
     ]
     return (
         <div className={styles.header}>{/* css module 사용시 대시가 포함된 경우 대괄호+따옴표(styles["ui-header"])로 묶기. js 내부에 작성된 문자열이니까. */}

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import './ModalPopup.scss';
+import { useEffect, useState } from 'react'
+import styles from './ModalPopup.module.scss'
 
 // state(상태)를 자식에서 관리
 export default function ModalPopup ({
@@ -37,9 +37,9 @@ export default function ModalPopup ({
     if(!isOpen) return null; 
 
     return (
-        <div className="modalOverlay" onClick={onClose}>
-            <div className="modalContent" role="dialog" aria-modal="true" onClick={(e) => {e.stopPropagation()}}>
-                <button type="button" className="modalClose" aria-label="닫기" onClick={onClose}>X</button>
+        <div className={styles.modalOverlay} onClick={onClose}>
+            <div className={styles.modalContent} role="dialog" aria-modal="true" onClick={(e) => {e.stopPropagation()}}>
+                <button type="button" className={styles.modalClose} aria-label="닫기" onClick={onClose}>X</button>
                 {children}                
             </div>
         </div>

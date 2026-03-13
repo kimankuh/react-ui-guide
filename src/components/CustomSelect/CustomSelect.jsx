@@ -1,6 +1,5 @@
-import React from "react";
-import {useState, useRef, useEffect} from "react";
-import "./CustomSelect.scss";
+import {useState, useRef, useEffect} from "react"
+import styles from "./CustomSelect.module.scss"
 
 const CustomSelect = ({
     options,
@@ -56,7 +55,7 @@ const CustomSelect = ({
         // A && B => A가 true이면 B를 반환, false이면 false를 반환
         // filter(Boolean) => falsy값들(false, undefined, 0, '')을 제거하고 truthy만 남길때
         // join(' ') => 클래스
-    const classes = ['ui-custom-select', disabled && 'disabled', error && 'error'].filter(Boolean).join(' ');
+    const classes = [styles.uiCustomSelect, disabled && styles.disabled, error && styles.error].filter(Boolean).join(' ');
 
     // 5) 셀렉트 클릭(열고/닫기)
     const toggleOpen = () => {
@@ -109,15 +108,15 @@ const CustomSelect = ({
         <div className={classes} ref={selectRef}>
             
             {/* 8-1) 선택된 값 표시 영역 */}
-            <div className="select-trigger" onClick={toggleOpen}>
+            <div className={styles.selectTrigger} onClick={toggleOpen}>
                 {selected ? selected.label : placeholder}
             </div>
 
             {/* 8-2) 드롭다운 옵션 목록 */}
             {open && (// open이 true면 jsx를 렌더링. false값이면 리액트는 무시함(표시 안됨)
-                <ul className="select-options">
+                <ul className={styles.selectOptions}>
                     {options.map(opt => (
-                        <li key={opt.id} className={opt.value === value ? 'selected' : ''} onClick={() => handleSelect(opt)}>{opt.label}</li>
+                        <li key={opt.id} className={opt.value === value ? styles.selected : ''} onClick={() => handleSelect(opt)}>{opt.label}</li>
                     ))}
                 </ul> 
             )}
@@ -131,9 +130,9 @@ const CustomSelect = ({
             </select>
 
             {/* 8-4) 에러 메세지 */}
-            {error && <p className="uiError">{error}</p>}
+            {error && <p className={styles.uiError}>{error}</p>}
         </div>
     );
 }
 
-export default CustomSelect;
+export default CustomSelect
