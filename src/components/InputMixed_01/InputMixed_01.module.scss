@@ -1,0 +1,10 @@
+.inputWrap {
+    display: flex;
+    align-items: center;
+    
+    .label {
+        padding-right: 10px;
+        min-width:60px;
+        font-weight: bold;
+    }
+}

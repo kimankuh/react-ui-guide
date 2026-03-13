@@ -1,21 +1,24 @@
-.uiInput {
+.inputWrap {
     display: flex;
-    flex-direction: column;
     margin-bottom: 10px;
-    width: 100%;    
+    width: 100%;
+    align-items: center;
 
     .uiLabel {
-        margin-bottom:6px;
+        padding-right: 20px;
+        min-width:90px;
         font-size:14px;
         font-weight:600;
-        color: $color-gray-700;
+        color: $color-gray-700;        
     }
 
-    .input {
+    .uiInput {
+        // flex-shrink: 1;
+        flex-grow: 1;
         padding: 10px 12px;
         font-size:15px;
         border:1px solid $color-gray-400;
-        border-radius: 6px;        
+        border-radius: 6px;
 
         &:focus {
             outline: none;
