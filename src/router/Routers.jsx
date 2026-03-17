@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom"
 // 페이지
 import Layout from "../components/layout/Layout"
 import Home from "../pages/Home/Home"
-import ButtonPage from "../pages/Button/ButtonPage"
+import ButtonPage from "../pages/ButtonPage/ButtonPage"
 import InputPage from "../pages/InputPage/InputPage"
 import RadioPage from "../pages/RadioPage/RadioPage"
 import CheckboxPage from "../pages/CheckboxPage/CheckboxPage"

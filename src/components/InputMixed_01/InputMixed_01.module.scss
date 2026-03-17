@@ -1,10 +1,6 @@
-.inputWrap {
+.inputMixedWrap {
     display: flex;
     align-items: center;
+    gap: 10px;
     
-    .label {
-        padding-right: 10px;
-        min-width:60px;
-        font-weight: bold;
-    }
 }

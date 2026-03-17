@@ -1,8 +1,15 @@
 .inputWrap {
     display: flex;
-    margin-bottom: 10px;
-    width: 100%;
     align-items: center;
+    flex-grow: 1;
+
+    &.error {
+        flex-wrap: wrap;
+
+        .uiInput {
+            flex: 1;
+        }
+    }
 
     .uiLabel {
         padding-right: 20px;
@@ -13,28 +20,33 @@
     }
 
     .uiInput {
-        // flex-shrink: 1;
-        flex-grow: 1;
         padding: 10px 12px;
+        width: 100%;
         font-size:15px;
         border:1px solid $color-gray-400;
         border-radius: 6px;
-
+        
         &:focus {
             outline: none;
             border-color: $color-primary;
             box-shadow: 0,0,0,2px,rgba($color-primary, 0.2);
         }
 
+        &:disabled {
+            cursor: not-allowed;
+        }
+
         &.error {
             border-color: $color-danger;
-            box-shadow: 0,0,0,2px,rgba($color-danger, 0.2);
+            box-shadow: 0 0 0 2px rgba($color-danger, 0.2);
         }
     }
 
     .uiError {
         margin-top: 4px;
+        padding-left: 90px;
+        width: 100%;
         color: $color-danger;
-        font-size: 13px;
+        font-size: 12px;
     }
 }

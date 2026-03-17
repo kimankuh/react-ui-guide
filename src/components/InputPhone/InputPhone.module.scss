@@ -1,0 +1,25 @@
+.inputPhoneWrap {
+    display: flex;
+    align-items: center;
+
+    .labelText {
+        padding-right: 20px;
+        min-width: 90px;
+        font-size: 14px;
+        font-weight:bold;
+        color: $color-gray-700;
+    }
+
+    .phoneWrap {
+        display: flex;
+        align-items: center;
+
+        .dash {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 10px;
+            text-align: center;
+        }
+    }
+}

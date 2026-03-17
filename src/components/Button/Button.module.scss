@@ -1,6 +1,7 @@
 .btn {
-    padding: 10px 16px;
+    padding: 10px 16px;    
     border-radius: 4px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
 
@@ -15,11 +16,13 @@
     }
 
     &.sm {
-        font-size: 12px;
-        padding: 6px 10px;
+        padding: 5px 5px;
+        min-width:40px;
+        font-size: 12px;    
     }
 
     &.md {
+        min-width:60px;
         font-size: 14px;
     }
 
