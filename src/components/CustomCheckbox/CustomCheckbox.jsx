@@ -1,4 +1,10 @@
-import styles from "./CustomCheckbox.module.scss";
+import styled from "styled-components";
+// import styles from "./CustomCheckbox.module.scss";
+
+const CustomCheckbox = styled.div`
+    ${disabled ? "disabled" : ""}
+    // background-color: ${props => props.$disabled ? "#f5f5f5" : "#fff"};
+`;
 
 export default function CustomCheckbox ({
     id,
@@ -12,7 +18,7 @@ export default function CustomCheckbox ({
         onChange(e.target.checked);
     }
     return (
-        <div className={`${styles.customCheckbox} ${disabled ? "disabled" : ""}`}>
+        <CustomCheckbox>
             {/* 실제 상태를 가진 input - 바뀌지 않는 건 type, 그 외엔 props로 받기 */}
             <input type="checkbox" id={id} checked={checked} onChange={handleChange} disabled={disabled} />
 
@@ -21,6 +27,6 @@ export default function CustomCheckbox ({
                 <span className={styles.box}></span>
                 <span className={styles.labelText}>{label}</span>
             </label>
-        </div>
+        </CustomCheckbox>
     );
 }

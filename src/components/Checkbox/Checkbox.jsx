@@ -1,4 +1,4 @@
-import styles from  "./Checkbox.module.scss";
+// import styles from  "./Checkbox.module.scss";
 
 export default function Checkbox({
     id,

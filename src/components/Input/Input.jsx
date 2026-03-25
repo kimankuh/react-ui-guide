@@ -12,7 +12,7 @@ const InputWrap = styled.div`
     `}
 `;
 
-const uiLabel = props.label`
+const UiLabel = styled.label`
         padding-right: 20px;
         min-width:90px;
         font-size:14px;
@@ -20,7 +20,7 @@ const uiLabel = props.label`
         color: $color-gray-700;
 `;
 
-const uiInput = props.input`
+const UiInput = styled.input`
         padding: 10px 12px;
         width: 100%;
         font-size:15px;
@@ -41,16 +41,24 @@ const uiInput = props.input`
         `}
 `;
 
+const UiError = styled.p`
+        margin-top: 4px;
+        padding-left: 90px;
+        width: 100%;
+        color: $color-danger;
+        font-size: 12px;
+`;
+
 // 세로방향일 때 prop 추가 : 
 // 가로방향일 때 prop 추가 : 
-const Input = ({id, label, type="text", name, title, value, placeholder="내용을 입력해 주세요", error, disabled, ...rest}) => {
+const Input = ({id, label, type="text", name, title, placeholder="내용을 입력해 주세요", error, disabled, ...rest}) => {
 // const classes = [styles.uiInput, error && styles.error, disabled && styles.disabled].filter(Boolean).join(' ');
 
     return (
         <InputWrap>
-            {label && <uiLabel htmlFor={id}>{label}</uiLabel>}
-            <input type={type} id={id} name={name} title={title} value={value} className={classes} placeholder={placeholder} disabled={disabled} {...rest} />
-            {error && <p className={styles.uiError}>{error}</p>}
+            {label && <UiLabel htmlFor={id}>{label}</UiLabel>}
+            <UiInput type={type} id={id} name={name} title={title} value={value} placeholder={placeholder} disabled={disabled} {...rest} />
+            {error && <UiError>{error}</UiError>}
         </InputWrap>
     )
 }
