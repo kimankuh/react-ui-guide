@@ -1,9 +1,27 @@
-import styles from "./CustomCheckbox_02.module.scss";
+import styled, { css } from "styled-components";
+import Button from "../Button/Button";
+// import styles from "./CustomCheckbox_02.module.scss";
+
+// checked가 ture일 때만 추가되는 스타일
+const ToggleButton = styled(Button)`
+    ${props => props.$checked && css`
+        color: #fff;
+        background-color: $color-warning;
+    `}
+`;
+const ToggleSpan = styled.span`
+    width: 16px;
+    height: 16px;
+    border: 1px solid #999;
+    background: #fff;
+`;
 
 export default function CustomCheckbox_02({
+    // children,
     label,
     checked,
     onChange,
+    ...rest
 }){
     // input change 이벤트 처리
     const handleClick = () => {
@@ -11,12 +29,13 @@ export default function CustomCheckbox_02({
         // console.log('클릭???', checked)       
     }
     
-    const classes = [styles.toggleButton, checked && styles.checked].filter(Boolean).join(' ');
+    // const classes = [styles.toggleButton, checked && styles.checked].filter(Boolean).join(' ');
 
     return (
-        <button type="button" className={classes} onClick={handleClick}>
-            {/* <span className={styles.box}></span> */}
+        // 부모에서 Button 컴포넌트에서 사용하는 props들을 사용할 수 있음 : size="large", color="primary"
+        <ToggleButton type="button" onClick={handleClick} $checked={checked} {...rest}>
+            {/* <ToggleSpan>{children}</ToggleSpan> */}
             <span>{label}</span>
-        </button>
+        </ToggleButton>
     );
 }

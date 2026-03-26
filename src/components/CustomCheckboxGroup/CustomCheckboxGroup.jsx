@@ -1,4 +1,29 @@
-import styles from "./CustomCheckboxGroup.module.scss";
+import styled, { css } from "styled-components";
+// import styles from "./CustomCheckboxGroup.module.scss";
+
+const CheckboxGroup = styled.div``;
+const UiCheckbox = styled.button`
+    padding:5px 10px;
+    cursor:pointer;
+    border:none;
+
+    &:hover {
+        background-color:#ddd;
+    }
+
+    & + & {
+        margin-left:10px;
+    }
+
+    ${props => props.$checked && css`
+        color:#fff;
+        background-color:$color-primary;
+
+        &:hover {
+            background-color:#0061c9;
+        }
+    `}
+`;
 
 export default function CustomCheckboxGroup({
     options,// ==> 화면에 뿌려주는 용도
@@ -27,7 +52,7 @@ export default function CustomCheckboxGroup({
         console.log('optionValue', value)
     }
     return (
-        <div className={styles.checkboxGroup}>            
+        <CheckboxGroup>            
             {options.map(option => {
                 // props으로 받은 value에 들어있는 값을 비교하여 true/false
                 const checked = value.includes(option.value);
@@ -35,9 +60,9 @@ export default function CustomCheckboxGroup({
                 // 각 체크박스마다 판단하고 클래스를 넣어줘야하니 반복문 내부에 위치함
                 const classes = [styles.uiCheckbox, checked && styles.checked].filter(Boolean).join(' ');
                 return (
-                    <button key={option.value} type="button" className={classes} onClick={() => handleClick(option.value)}>{option.label}</button>
+                    <UiCheckbox key={option.value} type="button" onClick={() => handleClick(option.value)} $checked={checked}>{option.label}</UiCheckbox>
                 );
             })}
-        </div>
+        </CheckboxGroup>
     );
 }

@@ -1,5 +1,34 @@
 import {useState, useRef, useEffect} from "react"
-import styles from "./CustomSelect.module.scss"
+import styled, { css } from "styled-components";
+import { UiError } from "../../styles/GlobalStyle";
+// import styles from "./CustomSelect.module.scss"
+
+
+const UiCustomSelect = styled.div`
+    position: relative;
+    cursor: pointer;
+
+    ${props => props.$disabled && css``}// css 스타일 뭉치. $disabled 값이 true일때만 적용되는 스타일
+    ${props => props.$error && css``}// css 스타일 뭉치. $error 값이 true일때만 적용되는 스타일
+`;
+
+const SelectTrigger = styled.div``;
+const SelectOptList = styled.ul`
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 100px;
+    background: #fff;
+    border: 1px solid #ddd;
+`;
+
+const SelectOptItem = styled.li`
+    // $isSelected 상태값이 true인 경우 스타일
+    ${props => props.$isSelected && css`
+        
+    `}
+`;
 
 const CustomSelect = ({
     options,
@@ -55,7 +84,7 @@ const CustomSelect = ({
         // A && B => A가 true이면 B를 반환, false이면 false를 반환
         // filter(Boolean) => falsy값들(false, undefined, 0, '')을 제거하고 truthy만 남길때
         // join(' ') => 클래스
-    const classes = [styles.uiCustomSelect, disabled && styles.disabled, error && styles.error].filter(Boolean).join(' ');
+    // const classes = [styles.uiCustomSelect, disabled && styles.disabled, error && styles.error].filter(Boolean).join(' ');
 
     // 5) 셀렉트 클릭(열고/닫기)
     const toggleOpen = () => {
@@ -105,20 +134,20 @@ const CustomSelect = ({
     return (
         // 8) 화면 렌더링
         // <div className={`ui-custom-select ${disabled ? "disabled" : ""} ${error ? "error" : ""}`}>
-        <div className={classes} ref={selectRef}>
+        <UiCustomSelect ref={selectRef} $disabled={disabled} $error={error}>
             
             {/* 8-1) 선택된 값 표시 영역 */}
-            <div className={styles.selectTrigger} onClick={toggleOpen}>
+            <SelectTrigger onClick={toggleOpen}>
                 {selected ? selected.label : placeholder}
-            </div>
+            </SelectTrigger>
 
             {/* 8-2) 드롭다운 옵션 목록 */}
             {open && (// open이 true면 jsx를 렌더링. false값이면 리액트는 무시함(표시 안됨)
-                <ul className={styles.selectOptions}>
+                <SelectOptList>
                     {options.map(opt => (
-                        <li key={opt.id} className={opt.value === value ? styles.selected : ''} onClick={() => handleSelect(opt)}>{opt.label}</li>
+                        <SelectOptItem key={opt.id} $isSelected={opt.value === value} onClick={() => handleSelect(opt)}>{opt.label}</SelectOptItem>
                     ))}
-                </ul> 
+                </SelectOptList> 
             )}
 
             {/* 8-3) 폼 전송용 select */}
@@ -130,8 +159,8 @@ const CustomSelect = ({
             </select>
 
             {/* 8-4) 에러 메세지 */}
-            {error && <p className={styles.uiError}>{error}</p>}
-        </div>
+            {error && <UiError>{error}</UiError>}
+        </UiCustomSelect>
     );
 }
 
